@@ -8,6 +8,7 @@ import AsSeenOnSection from "@/components/AsSeenOnSection";
 import StatisticsSection from "@/components/StatisticsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import AboutUsSection from "@/components/AboutUsSection";
+import SupportServicesSection from "@/components/SupportServicesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import SuccessStoriesSection from "@/components/SuccessStoriesSection";
 import TeamSection from "@/components/TeamSection";
@@ -107,6 +108,7 @@ export default function Home() {
       <StatisticsSection />
       <TestimonialsSection testimonials={testimonials} handleVideoClick={handleVideoClick} />
       <AboutUsSection />
+      <SupportServicesSection />
       <HowItWorksSection />
       <SuccessStoriesSection />
       <TeamSection />

@@ -31,6 +31,24 @@ export default function Navbar({
 
         <div className="nav-links">
           <a href="#about" className="nav-link">About</a>
+
+          {/* Dropdown Menu: Support Services */}
+          <div className="relative group inline-block">
+            <button className="nav-link flex items-center gap-1 cursor-pointer focus:outline-none">
+              <span>Support Services</span>
+              <svg className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-[var(--bg-nav)] backdrop-blur-md border border-[var(--border-color)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div className="py-1">
+                <a href="#accommodation" className="block px-4 py-2 text-xs font-semibold text-[var(--text-secondary)] hover:bg-[var(--bg-primary)] hover:text-[#C5A059] transition-all">ACCOMMODATION</a>
+                <a href="#mentoring" className="block px-4 py-2 text-xs font-semibold text-[var(--text-secondary)] hover:bg-[var(--bg-primary)] hover:text-[#C5A059] transition-all">MENTORING</a>
+                <a href="#cultural-programs" className="block px-4 py-2 text-xs font-semibold text-[var(--text-secondary)] hover:bg-[var(--bg-primary)] hover:text-[#C5A059] transition-all">SOCIAL CULTURAL PROGRAMS</a>
+              </div>
+            </div>
+          </div>
+
           <a href="#sectors" className="nav-link">Sectors</a>
           <a href="#programs" className="nav-link">Programs</a>
           <a href="#testimonials" className="nav-link">Testimonials</a>
@@ -85,6 +103,15 @@ export default function Navbar({
       {/* Responsive Mobile Links Dropdown */}
       <div className={`nav-links-mobile ${isMobileOpen ? "is-open" : ""} transition-all duration-300 ease-in-out`}>
         <a href="#about" className="nav-link text-center py-2 text-base font-semibold hover:text-[var(--primary)] transition-colors" onClick={() => setIsMobileOpen(false)}>About</a>
+        
+        {/* Support Services Mobile section */}
+        <div className="flex flex-col items-center py-2 text-[var(--text-secondary)] border-y border-[var(--border-color)] bg-[var(--bg-primary)]/40 w-full">
+          <span className="text-xs font-bold uppercase tracking-wider text-[var(--text-muted)] mb-1">Support Services</span>
+          <a href="#accommodation" className="py-1 text-sm font-semibold hover:text-[#C5A059] transition-colors" onClick={() => setIsMobileOpen(false)}>ACCOMMODATION</a>
+          <a href="#mentoring" className="py-1 text-sm font-semibold hover:text-[#C5A059] transition-colors" onClick={() => setIsMobileOpen(false)}>MENTORING</a>
+          <a href="#cultural-programs" className="py-1 text-sm font-semibold hover:text-[#C5A059] transition-colors" onClick={() => setIsMobileOpen(false)}>SOCIAL CULTURAL PROGRAMS</a>
+        </div>
+
         <a href="#sectors" className="nav-link text-center py-2 text-base font-semibold hover:text-[var(--primary)] transition-colors" onClick={() => setIsMobileOpen(false)}>Sectors</a>
         <a href="#programs" className="nav-link text-center py-2 text-base font-semibold hover:text-[var(--primary)] transition-colors" onClick={() => setIsMobileOpen(false)}>Programs</a>
         <a href="#testimonials" className="nav-link text-center py-2 text-base font-semibold hover:text-[var(--primary)] transition-colors" onClick={() => setIsMobileOpen(false)}>Testimonials</a>
