@@ -552,3 +552,51 @@ Its main competitive advantage is its **long experience, extensive international
 ### In one sentence:
 
 **PGI connects international students and professionals with work, learning, training, accommodation, and cultural opportunities in Malta while supporting them throughout their international experience.**
+
+---
+
+# 21. Modern Web Platform Architecture (2026 Upgrades)
+
+To support our global mobilities efficiently, the website has been completely upgraded into a high-performance web platform featuring a decoupled client-server architecture:
+
+### Frontend Technologies (Next.js & Zustand)
+* **Single-Page Progressive Forms**: Features a stateful 8-step visual wizard that allows students and teachers to submit data in comfortable sections, with local draft auto-saving.
+* **Global State Management**: Powered by **Zustand**, providing lightweight, reactive, and highly responsive data flows without slow cascading re-renders.
+* **Responsive Visual Steppers**: Features customized top-fixed navigation bars, dynamic horizontal visual progress nodes, and beautiful glassmorphic elements.
+
+### Backend Technologies (Express.js & MongoDB)
+* **MVC (Model-View-Controller) Boilerplate**: Standardized, clean Express backend organized into explicit Model, Controller, Router, and Configuration modules.
+* **MongoDB Atlas Cloud Database**: Dynamic Mongoose ODM schemas connecting all forms and user accounts straight to a persistent live cloud database cluster.
+* **Bcrypt Password Security**: Zero hardcoded strings or plaintext passwords. Admin accounts are hashed dynamically on startup or on-save.
+
+---
+
+# 22. High-Fidelity Feature & Design Details
+
+### 🎨 Color Palette & Flat Aesthetics
+* **Primary Brand Color**: Deep Navy / Charcoal Blue (`#0B192C`) used for light mode primary body text, titles, and dark mode background panels.
+* **Secondary Brand Color**: Warm White (`#FAF9F6`) used for light mode layout backgrounds, spacing, and dark mode text.
+* **Accent Color**: Brushed Gold/Copper (`#C5A059`) strictly used for buttons, links, custom highlights, active stepper nodes, and key statistical values.
+* **Flat Design Constraints**: Strictly flat color states (no CSS linear gradients) and crisp, compact container widths with small rounded-md radii for clean modern editorial styling.
+
+### 🏠 Support Services Subsection (Integrated Nav Dropdown)
+* **Accommodation Hub**: Detailed descriptions of Self-Catering Apartments (18+), Maltese Host Family Homestays (All Ages), and Bed & Breakfast Hotels.
+* **Professional Mentoring**: Includes 1-on-1 career training, 24/7 emergency welfare support hotlines, academic Learning Agreements, and CEFR Skill Assessments.
+* **Cultural Excursions**: Scenic tours organizes tours to Gozo, Mdina Silent City, Valletta UNESCO Walks, Blue Lagoon lagoon, Harbour Cruises, Popeye Village, and historic Treasure Hunts.
+
+### 📋 Interactive 8-Step Apply Now Wizard
+1. **Personal Profile**: Standardizes applicant type selection (Student/Teacher) with contact credentials (WhatsApp first).
+2. **Residence Address**: Captures street, country, ZIP, and nationality.
+3. **Sending Academy**: Connects coordinator details and university names.
+4. **Timeline Dates**: Coordinates exact Arrival and Departure targets.
+5. **Accommodation Selection**: Gathers co-living types, room styles, and dietary requirements.
+6. **Placement Sector (Optional)**: Flexible preference choices mapping up to 34 Maltese industry sectors.
+7. **Welfare & English Scale**: Medical disclosures and CEFR level grading (A1 to C2).
+8. **Legal Declaration & Signature**: Electronically signs and date-stamps the mobility request.
+
+### 🛡️ Admin Login & Workspace Dashboard
+* **Email Entrance**: Secure authorization gateway requiring Email (`admin@pginternship.com`) and Password (`admin123`) loaded dynamically from `.env`.
+* **SPA Dashboard Panel**:
+  - **Left Sidebar Navigation**: Displays corporate logo (48px) and navigation links with dynamic count badges and professional vector SVG icons.
+  - **New Applies View**: Hosts metric cards, search term queries, sector filters, and detailed applicant drawer reviews.
+  - **Enrolled View**: Highlights finalized candidates. Changing a status to *Approved* instantly relocates students to this table in real-time.

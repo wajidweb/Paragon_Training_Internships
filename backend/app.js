@@ -21,8 +21,10 @@ if (process.env.NODE_ENV !== "production") {
 // 2. Router Mounting
 const applicationRoutes = require("./routes/applicationRoutes");
 const authRoutes = require("./routes/authRoutes");
+const chatRoutes = require("./routes/chatRoutes");
 app.use("/api/applications", applicationRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/chat", chatRoutes);
 
 // 3. Base Health Check Endpoint
 app.get("/", (req, res) => {
