@@ -153,6 +153,25 @@ export default function ApplyNowPage() {
   // 4. Submit handler (clears localStorage upon final completion)
   const handleSubmit = () => {
     setIsSubmitted(true);
+    
+    // Save submission to LocalStorage for the Admin Dashboard to read
+    try {
+      const existingSubmissionsStr = localStorage.getItem("apply_now_submissions") || "[]";
+      const existingSubmissions = JSON.parse(existingSubmissionsStr);
+      
+      const newSubmission = {
+        ...formData,
+        id: `APP-${Date.now().toString().slice(-6)}`,
+        submittedAt: new Date().toISOString(),
+        status: "Pending",
+      };
+      
+      existingSubmissions.unshift(newSubmission);
+      localStorage.setItem("apply_now_submissions", JSON.stringify(existingSubmissions));
+    } catch (e) {
+      console.warn("Failed to save submission to admin list:", e);
+    }
+
     localStorage.removeItem("apply_now_data");
     localStorage.removeItem("apply_now_step");
     window.scrollTo({ top: 120, behavior: "smooth" });
