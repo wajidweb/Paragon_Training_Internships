@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { useAuthStore } from "@/store/useAuthStore";
+import { useApplicationStore } from "@/store/useApplicationStore";
 
 // Types matching ApplicationData for rigorous type-safety
 import { ApplicationData } from "@/components/apply-now/types";
@@ -15,7 +17,7 @@ interface Submission extends ApplicationData {
 
 export default function AdminDashboardPage() {
   const router = useRouter();
-  const [submissions, setSubmissions] = useState<Submission[]>([]);
+  const { submissions, fetchApplications, updateApplicationStatus, deleteApplication } = useApplicationStore();
   const [activeTab, setActiveTab] = useState<"new-applies" | "enrolled">("new-applies");
   const [searchQuery, setSearchQuery] = useState("");
   const [filterRole, setFilterRole] = useState("All");
@@ -34,188 +36,32 @@ export default function AdminDashboardPage() {
     localStorage.setItem("theme", "light");
     document.documentElement.setAttribute("data-theme", "light");
 
-    // Load submissions list and pre-populate with mock data if empty
-    const rawSubmissions = localStorage.getItem("apply_now_submissions");
-    if (rawSubmissions) {
-      try {
-        const parsed = JSON.parse(rawSubmissions);
-        setTimeout(() => {
-          setSubmissions(parsed);
-        }, 0);
-      } catch (e) {
-        console.warn("Failed to parse submissions list:", e);
-      }
-    } else {
-      // High-fidelity pre-population with 3 sample corporate student applications
-      const mockSubmissions: Submission[] = [
-        {
-          id: "APP-408212",
-          email: "katie.schmidt@uni-munich.de",
-          appCode: "ERASMUS-2026-A",
-          applicantType: "Student",
-          firstName: "Kathrin",
-          surname: "Schmidt",
-          gender: "Female",
-          dob: "2003-04-12",
-          phone: "+49 89 21800",
-          whatsapp: "+49 176 1234567",
-          nextOfKinPhone: "+49 89 987654",
-          address: "42 Leopoldstrasse, Apt 12",
-          cityZip: "Munich, 80802",
-          country: "Germany",
-          nationality: "German",
-          sendingInstitution: "Ludwig Maximilian University of Munich",
-          coordinatorName: "Dr. Hans Wagner",
-          coordinatorEmail: "h.wagner@lmu.de",
-          arrivalDate: "2026-10-01",
-          departureDate: "2027-02-28",
-          accommodationType: "Self-Catering Apartment",
-          roomType: "Shared Room",
-          mealPlan: "Not Applicable",
-          dietaryRequirements: "None",
-          accommodationRequests: "Please pair me with other German-speaking students if possible.",
-          workPreference1: "Finance & Banking",
-          workPreference2: "Business Admin",
-          workPreference3: "Accounting",
-          tasksDesired1: "reception duties, financial bookkeeping assist",
-          tasksDesired2: "filing, sorting reports",
-          tasksDesired3: "ledger sorting",
-          maxWorkingHours: "40",
-          workUntilTime: "18:00 hours",
-          workDays: "Weekdays Only",
-          medicalConditions: "Allergic to nuts.",
-          englishLevel: "B2",
-          declarationAgree: true,
-          signatureName: "Kathrin Schmidt",
-          signatureDate: "2026-09-18",
-          submittedAt: "2026-09-18T14:24:00.000Z",
-          status: "Pending"
-        },
-        {
-          id: "APP-502123",
-          email: "stefan.ebner@fh-wien.ac.at",
-          appCode: "REF-PG-99",
-          applicantType: "Student",
-          firstName: "Stefan",
-          surname: "Ebner",
-          gender: "Male",
-          dob: "2002-11-23",
-          phone: "+43 1 47677",
-          whatsapp: "+43 664 9876543",
-          nextOfKinPhone: "+43 1 123456",
-          address: "18 Waehringer Strasse",
-          cityZip: "Vienna, 1090",
-          country: "Austria",
-          nationality: "Austrian",
-          sendingInstitution: "FH Wien University of Applied Sciences",
-          coordinatorName: "Mag. Helga Huber",
-          coordinatorEmail: "helga.huber@fh-wien.ac.at",
-          arrivalDate: "2026-09-15",
-          departureDate: "2026-12-15",
-          accommodationType: "Host Family",
-          roomType: "Single Room",
-          mealPlan: "Half Board",
-          dietaryRequirements: "Vegetarian",
-          accommodationRequests: "I prefer a quiet household with good bus connections.",
-          workPreference1: "IT & Software Engineering",
-          workPreference2: "Web Design",
-          workPreference3: "",
-          tasksDesired1: "web development, database maintenance",
-          tasksDesired2: "layout updates, coding templates",
-          tasksDesired3: "",
-          maxWorkingHours: "35",
-          workUntilTime: "17:00 hours",
-          workDays: "Weekdays Only",
-          medicalConditions: "",
-          englishLevel: "C1",
-          declarationAgree: true,
-          signatureName: "Stefan Ebner",
-          signatureDate: "2026-09-15",
-          submittedAt: "2026-09-15T09:12:00.000Z",
-          status: "Approved"
-        },
-        {
-          id: "APP-619082",
-          email: "fiona.murphy@ucd.ie",
-          appCode: "STAFF-MOB-01",
-          applicantType: "Teacher",
-          firstName: "Fiona",
-          surname: "Murphy",
-          gender: "Female",
-          dob: "1980-05-30",
-          phone: "+353 1 716 7777",
-          whatsapp: "+353 87 1234567",
-          nextOfKinPhone: "+353 1 6543210",
-          address: "7 Merrion Square",
-          cityZip: "Dublin, D02",
-          country: "Ireland",
-          nationality: "Irish",
-          sendingInstitution: "University College Dublin",
-          coordinatorName: "Michael Kelly",
-          coordinatorEmail: "m.kelly@ucd.ie",
-          arrivalDate: "2026-10-10",
-          departureDate: "2026-10-24",
-          accommodationType: "Hotel",
-          roomType: "Single Room",
-          mealPlan: "Not Applicable",
-          dietaryRequirements: "Gluten Free",
-          dietaryOtherText: "Gluten intolerance",
-          accommodationRequests: "Central Sliema or St. Julians location preferred.",
-          workPreference1: "",
-          workPreference2: "",
-          workPreference3: "",
-          tasksDesired1: "",
-          tasksDesired2: "",
-          tasksDesired3: "",
-          maxWorkingHours: "",
-          workUntilTime: "",
-          workDays: "",
-          medicalConditions: "",
-          englishLevel: "C2",
-          declarationAgree: true,
-          signatureName: "Fiona Murphy",
-          signatureDate: "2026-09-10",
-          submittedAt: "2026-09-10T16:30:00.000Z",
-          status: "Reviewed"
-        }
-      ];
-      localStorage.setItem("apply_now_submissions", JSON.stringify(mockSubmissions));
-      setTimeout(() => {
-        setSubmissions(mockSubmissions);
-      }, 0);
-    }
-  }, [router]);
+    // Fetch submissions dynamically from proper backend API
+    fetchApplications();
+  }, [router, fetchApplications]);
+
+  const { logout } = useAuthStore();
 
   const handleLogout = () => {
-    localStorage.removeItem("admin_logged_in");
+    logout();
     router.push("/admin");
   };
 
-  const handleUpdateStatus = (id: string, newStatus: "Pending" | "Approved" | "Reviewed" | "Rejected") => {
-    setSubmissions((prev) => {
-      const nextSubmissions = prev.map((sub) =>
-        sub.id === id ? { ...sub, status: newStatus } : sub
-      );
-      localStorage.setItem("apply_now_submissions", JSON.stringify(nextSubmissions));
-      if (selectedSubmission && selectedSubmission.id === id) {
-        setSelectedSubmission((s) => s ? { ...s, status: newStatus } : null);
-      }
-      return nextSubmissions;
-    });
+  const handleUpdateStatus = async (id: string, newStatus: "Pending" | "Approved" | "Reviewed" | "Rejected") => {
+    const success = await updateApplicationStatus(id, newStatus);
+    if (success && selectedSubmission && selectedSubmission.id === id) {
+      setSelectedSubmission((s) => s ? { ...s, status: newStatus } : null);
+    }
   };
 
-  const handleDeleteSubmission = (id: string) => {
+  const handleDeleteSubmission = async (id: string) => {
     if (!confirm("Are you sure you want to permanently delete this application?")) {
       return;
     }
-    setSubmissions((prev) => {
-      const nextSubmissions = prev.filter((sub) => sub.id !== id);
-      localStorage.setItem("apply_now_submissions", JSON.stringify(nextSubmissions));
-      if (selectedSubmission && selectedSubmission.id === id) {
-        setSelectedSubmission(null);
-      }
-      return nextSubmissions;
-    });
+    const success = await deleteApplication(id);
+    if (success && selectedSubmission && selectedSubmission.id === id) {
+      setSelectedSubmission(null);
+    }
   };
 
   // Filter Submissions based on Active Tab:

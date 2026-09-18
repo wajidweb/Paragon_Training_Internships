@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { useAuthStore } from "@/store/useAuthStore";
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -11,8 +12,11 @@ export default function AdminLoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const [, setTheme] = useState("light");
+  const { login, initialize } = useAuthStore();
 
   useEffect(() => {
+    initialize();
+
     // Theme initialization
     const savedTheme = localStorage.getItem("theme") || "light";
     setTimeout(() => {
@@ -25,15 +29,15 @@ export default function AdminLoginPage() {
     if (isLoggedIn === "true") {
       router.push("/admin/dashboard");
     }
-  }, [router]);
+  }, [router, initialize]);
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    if ((email === "admin@pginternships.com" || email === "admin") && password === "admin") {
-      localStorage.setItem("admin_logged_in", "true");
+    const result = await login(email, password);
+    if (result.success) {
       router.push("/admin/dashboard");
     } else {
-      setError("Invalid email or password. Please use admin@pginternships.com / admin.");
+      setError(result.message || "Invalid email or password.");
     }
   };
 
