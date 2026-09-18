@@ -12,7 +12,7 @@ describe("Recreated Paragon Global Internships Page with Complete Brand Layout, 
 
     const bannerLink = screen.getByRole("link", { name: /here/i });
     expect(bannerLink).toBeInTheDocument();
-    expect(bannerLink).toHaveAttribute("href", "#contact-us");
+    expect(bannerLink).toHaveAttribute("href", "/apply-now");
   });
 
   it("renders the floating navbar with custom cropped logo and exact menus", () => {
@@ -31,16 +31,12 @@ describe("Recreated Paragon Global Internships Page with Complete Brand Layout, 
     expect(screen.getAllByText("Mentors")[0]).toBeInTheDocument();
   });
 
-  it("renders action buttons: Log in and Apply Now linking to Contact Us", () => {
+  it("renders action button: Apply Now linking to Contact Us", () => {
     render(<Home />);
-
-    const loginLink = screen.getAllByRole("link", { name: /log in/i })[0];
-    expect(loginLink).toBeInTheDocument();
-    expect(loginLink).toHaveAttribute("href", "#login");
 
     const applyNowLink = screen.getAllByRole("link", { name: /apply now/i })[0];
     expect(applyNowLink).toBeInTheDocument();
-    expect(applyNowLink).toHaveAttribute("href", "#contact-us");
+    expect(applyNowLink).toHaveAttribute("href", "/apply-now");
   });
 
   it("renders the hero content and description correctly", () => {
@@ -62,17 +58,12 @@ describe("Recreated Paragon Global Internships Page with Complete Brand Layout, 
     expect(screen.getByText(/20\+ Years of Excellence in Student Mobility/i)).toBeInTheDocument();
   });
 
-  it("renders the As Seen On media-feature section with infinite marquee track", () => {
-    const { container } = render(<Home />);
+  it("renders the As Seen On media-feature section with bold responsive typography", () => {
+    render(<Home />);
 
     // Check section label is present with new PGI branding
-    const label = screen.getByText("TRUSTED BY OVER 400 HIGHER EDUCATION INSTITUTIONS AND 4,000 GLOBAL PARTNERS:");
+    const label = screen.getByText("TRUSTED BY OVER 400 HIGHER EDUCATION INSTITUTIONS AND 4,000 GLOBAL PARTNERS");
     expect(label).toBeInTheDocument();
-
-    // Check that there are two duplicate logo images inside the marquee
-    const marqueeImages = container.querySelectorAll(".sp-img");
-    expect(marqueeImages.length).toBeGreaterThanOrEqual(2);
-    expect(marqueeImages[0]).toHaveAttribute("src", "/attached_assets/logo@3x.png");
   });
 
   it("renders the Statistics outcomes section with loop progress bars", () => {
@@ -125,7 +116,7 @@ describe("Recreated Paragon Global Internships Page with Complete Brand Layout, 
     render(<Home />);
 
     // Check grand hero logo brand text
-    expect(screen.getByText("PARAGON")).toBeInTheDocument();
+    expect(screen.getByText("PG INTERNSHIPS")).toBeInTheDocument();
 
     // Check footer columns titles
     expect(screen.getByText("Our Programs")).toBeInTheDocument();
@@ -161,7 +152,7 @@ describe("Recreated Paragon Global Internships Page with Complete Brand Layout, 
     // Check CTA button (index 6 is the last Get Started button in DOM order)
     const getStartedBtn = screen.getAllByRole("link", { name: /Get Started/i })[6];
     expect(getStartedBtn).toBeInTheDocument();
-    expect(getStartedBtn).toHaveAttribute("href", "https://www.myneurogym.com/neurofitness-assessment");
+    expect(getStartedBtn).toHaveAttribute("href", "/apply-now");
   });
 
   it("renders the Paragon Frequently Asked Questions (FAQ) section", () => {
@@ -208,14 +199,14 @@ describe("Recreated Paragon Global Internships Page with Complete Brand Layout, 
     // Check gallery section CTA button
     const getStartedBtn = screen.getAllByRole("link", { name: /Get Started/i })[5];
     expect(getStartedBtn).toBeInTheDocument();
-    expect(getStartedBtn).toHaveAttribute("href", "#contact-us");
+    expect(getStartedBtn).toHaveAttribute("href", "/apply-now");
   });
 
   it("renders the Paragon kp49 Placement Sectors section", () => {
     render(<Home />);
 
     // Check section heading and description
-    expect(screen.getByText("15+")).toBeInTheDocument();
+    expect(screen.getByText("34")).toBeInTheDocument();
     expect(screen.getByText("Placement Sectors")).toBeInTheDocument();
     expect(
       screen.getByText("Hands-on corporate placements matched precisely to your academic background, career interests, and skills across Malta's fastest-growing industries.")
@@ -234,7 +225,7 @@ describe("Recreated Paragon Global Internships Page with Complete Brand Layout, 
     // Check Get Started CTA button (index 4 in the DOM order)
     const getStartedBtn = screen.getAllByRole("link", { name: /Get Started/i })[4];
     expect(getStartedBtn).toBeInTheDocument();
-    expect(getStartedBtn).toHaveAttribute("href", "#contact-us");
+    expect(getStartedBtn).toHaveAttribute("href", "/apply-now");
   });
 
   it("renders the Paragon k2sc About Us section", () => {
@@ -266,7 +257,7 @@ describe("Recreated Paragon Global Internships Page with Complete Brand Layout, 
     // Check CTA button (index 0 in the DOM order)
     const getStartedBtn = screen.getAllByRole("link", { name: /Get Started/i })[0];
     expect(getStartedBtn).toBeInTheDocument();
-    expect(getStartedBtn).toHaveAttribute("href", "#contact-us");
+    expect(getStartedBtn).toHaveAttribute("href", "/apply-now");
   });
 
   it("renders the NeuroGym j9la How It Works section", () => {
@@ -285,7 +276,7 @@ describe("Recreated Paragon Global Internships Page with Complete Brand Layout, 
     // Check CTA button (index 1 in the DOM order)
     const getStartedBtn = screen.getAllByRole("link", { name: /Get Started/i })[1];
     expect(getStartedBtn).toBeInTheDocument();
-    expect(getStartedBtn).toHaveAttribute("href", "#contact-us");
+    expect(getStartedBtn).toHaveAttribute("href", "/apply-now");
   });
 
   it("renders the Paragon q3qi Success Stories section", () => {
@@ -321,7 +312,7 @@ describe("Recreated Paragon Global Internships Page with Complete Brand Layout, 
     // Check CTA button (index 2 in the DOM order)
     const getStartedBtn = screen.getAllByRole("link", { name: /Get Started/i })[2];
     expect(getStartedBtn).toBeInTheDocument();
-    expect(getStartedBtn).toHaveAttribute("href", "#contact-us");
+    expect(getStartedBtn).toHaveAttribute("href", "/apply-now");
   });
 
   it("renders the Paragon s0vi Team and Advisory Board section", () => {
@@ -354,7 +345,7 @@ describe("Recreated Paragon Global Internships Page with Complete Brand Layout, 
     // Check CTA button (index 3 in the DOM order)
     const getStartedBtn = screen.getAllByRole("link", { name: /Get Started/i })[3];
     expect(getStartedBtn).toBeInTheDocument();
-    expect(getStartedBtn).toHaveAttribute("href", "#contact-us");
+    expect(getStartedBtn).toHaveAttribute("href", "/apply-now");
   });
 });
 

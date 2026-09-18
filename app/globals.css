@@ -9,22 +9,22 @@ html {
 }
 
 :root {
-  --primary: #8446ad;
-  --primary-dark: #6b3a8e;
-  --primary-light: #9b5bc4;
-  --secondary: #6366f1;
-  --gradient-primary: linear-gradient(135deg, #8446ad 0%, #a855f7 100%);
-  --gradient-section-soft: linear-gradient(135deg, rgba(132, 70, 173, .08) 0%, rgba(99, 102, 241, .08) 100%);
-  --bg-primary: #f8f9fa; /* Outer page bg around the hero is off-white */
-  --bg-secondary: #f8f9fa;
-  --bg-tertiary: #f0f1f3;
+  --primary: #C5A059;
+  --primary-dark: #A18247;
+  --primary-light: #E5C494;
+  --secondary: #0B192C;
+  --gradient-primary: #C5A059;
+  --gradient-section-soft: rgba(100, 116, 139, 0.04);
+  --bg-primary: #FAF9F6; /* Outer page bg around the hero is off-white */
+  --bg-secondary: #FAF9F6;
+  --bg-tertiary: #F1F0EA;
   --bg-card: #ffffff;
   --bg-nav: rgba(255, 255, 255, .95);
   --bg-nav-scrolled: rgba(255, 255, 255, .98);
-  --text-primary: #1a1a1a;
-  --text-secondary: #4a4a4a;
-  --text-muted: #6b7280;
-  --border-color: #e5e7eb;
+  --text-primary: #0B192C;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+  --border-color: #E2E8F0;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, .08);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, .1);
   --shadow-lg: 0 10px 40px rgba(0, 0, 0, .12);
@@ -32,16 +32,16 @@ html {
 }
 
 [data-theme=dark] {
-  --bg-primary: #0a0a0a; /* Dark background outside */
-  --bg-secondary: #141414;
-  --bg-tertiary: #1a1a1a;
-  --bg-card: #1a1a1a;
+  --bg-primary: #0F172A; /* Dark background outside */
+  --bg-secondary: #1E293B;
+  --bg-tertiary: #1E293B;
+  --bg-card: #1E293B;
   --bg-nav: rgba(20, 20, 20, .9);
   --bg-nav-scrolled: rgba(20, 20, 20, .98);
   --text-primary: #ffffff;
   --text-secondary: #c0c0c0;
   --text-muted: #888888;
-  --border-color: #2a2a2a;
+  --border-color: #1E293B;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, .3);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, .4);
   --shadow-lg: 0 10px 40px rgba(0, 0, 0, .5);
@@ -69,7 +69,7 @@ body {
   left: 0;
   right: 0;
   z-index: 1001;
-  background: linear-gradient(90deg,#8446ad,#6366f1);
+  background: #0B192C;
   padding: 10px 24px;
   text-align: center;
   border-radius: 0 0 16px 16px;
@@ -225,7 +225,7 @@ body {
 }
 .nav-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px #8446ad66;
+  box-shadow: 0 10px 30px #C5A05966;
 }
 
 /* Mobile Submenu & Hamburger */
@@ -398,12 +398,7 @@ body {
   color: #fff;
 }
 .hero-title-gradient {
-  background: linear-gradient(90deg,#a855f7,#c084fc,#a855f7,#8b5cf6,#c084fc,#a855f7);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: fireGradient 3s ease-in-out infinite;
+  color: #C5A059;
 }
 @keyframes fireGradient {
   0% { background-position: 0% 50%; }
@@ -434,11 +429,11 @@ body {
   font-weight: 600;
   color: #fff;
   transition: all .3s ease;
-  box-shadow: 0 4px 20px rgba(132, 70, 173, 0.3);
+  box-shadow: 0 4px 20px rgba(197, 160, 89, 0.3);
 }
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 40px rgba(132, 70, 173, 0.5);
+  box-shadow: 0 10px 40px rgba(197, 160, 89, 0.5);
 }
 .hero-members {
   margin-top: 24px;
@@ -794,7 +789,7 @@ body {
   transform: translate(-50%, -50%) scale(1);
   width: 60px;
   height: 60px;
-  background: rgba(132, 70, 173, 0.9);
+  background: rgba(197, 160, 89, 0.9);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -804,7 +799,7 @@ body {
   opacity: 0;
   transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   z-index: 2;
-  box-shadow: rgba(132, 70, 173, 0.5) 0 10px 40px;
+  box-shadow: rgba(197, 160, 89, 0.5) 0 10px 40px;
 }
 .pyc8 .social-proof-watch-badge {
   position: absolute;
@@ -841,8 +836,8 @@ body {
   align-items: center;
   gap: 6px;
   padding: 6px 12px;
-  background: rgba(132, 70, 173, 0.1);
-  border: 1px solid rgba(132, 70, 173, 0.2);
+  background: rgba(197, 160, 89, 0.1);
+  border: 1px solid rgba(197, 160, 89, 0.2);
   border-radius: 20px;
   font-size: 11px;
   font-weight: 500;
@@ -860,7 +855,7 @@ body {
   transform: translate(-50%);
   width: 80%;
   height: 40px;
-  background: radial-gradient(rgba(132, 70, 173, 0.3) 0%, transparent 70%);
+  background: radial-gradient(rgba(197, 160, 89, 0.3) 0%, transparent 70%);
   opacity: 0;
   transition: opacity 0.5s;
   filter: blur(20px);
@@ -870,7 +865,7 @@ body {
 .pyc8 .social-proof-card:hover {
   transform: translateY(-12px) scale(1.02);
   border-color: var(--primary-light);
-  box-shadow: 0 20px 40px rgba(132, 70, 173, 0.2);
+  box-shadow: 0 20px 40px rgba(197, 160, 89, 0.2);
 }
 .pyc8 .social-proof-card:hover .social-proof-watch-badge {
   opacity: 1;
@@ -956,23 +951,17 @@ body {
 .d6uh .footer-hero-logo {
   width: 100%;
   text-align: center;
-  padding: 0;
+  padding: 60px 0 0 0;
   overflow: hidden;
 }
 .d6uh .footer-hero-text {
-  font-size: clamp(80px, 16vw, 260px);
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  width: 100%;
-  max-width: 96vw;
+  font-size: clamp(36px, 6vw, 56px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
   display: block;
-  margin: 0 auto;
-  background: linear-gradient(90deg, rgb(132, 70, 173), rgb(168, 85, 247), rgb(132, 70, 173), rgb(99, 102, 241), rgb(168, 85, 247), rgb(132, 70, 173));
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: fireGradient 3s ease-in-out infinite;
+  margin: 0 auto 32px auto;
+  color: #C5A059;
+  text-align: center;
 }
 .d6uh .footer-container {
   max-width: 1200px;
@@ -1080,11 +1069,6 @@ body {
     gap: 16px;
     text-align: center;
   }
-  .d6uh .footer-hero-text {
-    font-size: clamp(68px, 13vw, 160px);
-    max-width: 92vw;
-    letter-spacing: -0.03em;
-  }
   .d6uh .footer-legal {
     flex-wrap: wrap;
     justify-content: center;
@@ -1096,13 +1080,13 @@ body {
    NEW NEUROGYM CTA SECTION (.ke3l)
    ================================================= */
 .ke3l  {
-  --bg-primary: #ffffff;
-  --text-primary: #1a1a1a;
-  --gradient-primary: linear-gradient(135deg, #8446ad 0%, #a855f7 100%);
-  --text-secondary: #4a4a4a;
+  --bg-primary: #FAF9F6;
+  --text-primary: #0B192C;
+  --gradient-primary: #C5A059;
+  --text-secondary: #334155;
 }
 [data-theme=dark] .ke3l {
-  --bg-primary: #1f1c2c;
+  --bg-primary: #0F172A;
   --text-primary: #ffffff;
   --text-secondary: #c0c0c0;
 }
@@ -1112,26 +1096,26 @@ body {
   box-sizing: border-box;
 }
 .ke3l  {
-  --primary: #8446ad;
-  --primary-dark: #6b3a8e;
-  --primary-light: #9b5bc4;
-  --secondary: #6366f1;
-  --gradient-primary: linear-gradient(135deg, #8446ad 0%, #a855f7 100%);
-  --gradient-section-soft: linear-gradient(135deg, rgba(132, 70, 173, .08) 0%, rgba(99, 102, 241, .08) 100%);
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --bg-tertiary: #f0f1f3;
+  --primary: #C5A059;
+  --primary-dark: #A18247;
+  --primary-light: #E5C494;
+  --secondary: #0B192C;
+  --gradient-primary: #C5A059;
+  --gradient-section-soft: rgba(100, 116, 139, 0.04);
+  --bg-primary: #FAF9F6;
+  --bg-secondary: #FAF9F6;
+  --bg-tertiary: #F1F0EA;
   --bg-card: #ffffff;
   --bg-nav: rgba(255, 255, 255, .95);
   --bg-nav-scrolled: rgba(255, 255, 255, .98);
-  --text-primary: #1a1a1a;
-  --text-secondary: #4a4a4a;
-  --text-muted: #6b7280;
-  --border-color: #e5e7eb;
+  --text-primary: #0B192C;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+  --border-color: #E2E8F0;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, .08);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, .1);
   --shadow-lg: 0 10px 40px rgba(0, 0, 0, .12);
-  --gradient-hero: linear-gradient(135deg, rgba(255, 77, 0, .05) 0%, rgba(99, 102, 241, .05) 100%);
+  --gradient-hero: transparent;
 }
 .ke3l  {
   scroll-behavior: smooth;
@@ -1149,10 +1133,8 @@ body {
   text-decoration: none;
   color: inherit;
 }
-.ke3l .hero-title-gradient  {
-  background: linear-gradient(90deg, rgb(168, 85, 247), rgb(192, 132, 252), rgb(168, 85, 247), rgb(139, 92, 246), rgb(192, 132, 252), rgb(168, 85, 247)) 0% 0% / 200% 100% text;
-  -webkit-text-fill-color: transparent;
-  animation: 3s ease-in-out 0s infinite normal none running fireGradient;
+.ke3l .hero-title-gradient {
+  color: #C5A059;
 }
 .ke3l .btn-primary  {
   display: inline-flex;
@@ -1165,11 +1147,11 @@ body {
   font-weight: 500;
   color: rgb(255, 255, 255);
   transition: 0.3s;
-  box-shadow: rgba(132, 70, 173, 0.3) 0px 4px 20px;
+  box-shadow: rgba(197, 160, 89, 0.3) 0px 4px 20px;
 }
 .ke3l .cta-section  {
   padding: 64px 0px 128px;
-  background: linear-gradient(135deg, rgba(132, 70, 173, 0.1), rgba(99, 102, 241, 0.1));
+  background: rgba(100, 116, 139, 0.05);
   position: relative;
   overflow: hidden;
 }
@@ -1215,12 +1197,12 @@ body {
    NEW NEUROGYM FAQ SECTION (.imar)
    ================================================= */
 .imar  {
-  --bg-primary: #ffffff;
-  --text-primary: #1a1a1a;
+  --bg-primary: #FAF9F6;
+  --text-primary: #0B192C;
   --bg-card: #ffffff;
-  --border-color: #e5e7eb;
-  --text-secondary: #4a4a4a;
-  --primary-light: #9b5bc4;
+  --border-color: #E2E8F0;
+  --text-secondary: #334155;
+  --primary-light: #E5C494;
 }
 .imar *  {
   margin: 0px;
@@ -1228,33 +1210,33 @@ body {
   box-sizing: border-box;
 }
 .imar  {
-  --primary: #8446ad;
-  --primary-dark: #6b3a8e;
-  --primary-light: #9b5bc4;
-  --secondary: #6366f1;
-  --gradient-primary: linear-gradient(135deg, #8446ad 0%, #a855f7 100%);
-  --gradient-section-soft: linear-gradient(135deg, rgba(132, 70, 173, .08) 0%, rgba(99, 102, 241, .08) 100%);
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --bg-tertiary: #f0f1f3;
+  --primary: #C5A059;
+  --primary-dark: #A18247;
+  --primary-light: #E5C494;
+  --secondary: #0B192C;
+  --gradient-primary: #C5A059;
+  --gradient-section-soft: rgba(100, 116, 139, 0.04);
+  --bg-primary: #FAF9F6;
+  --bg-secondary: #FAF9F6;
+  --bg-tertiary: #F1F0EA;
   --bg-card: #ffffff;
   --bg-nav: rgba(255, 255, 255, .95);
   --bg-nav-scrolled: rgba(255, 255, 255, .98);
-  --text-primary: #1a1a1a;
-  --text-secondary: #4a4a4a;
-  --text-muted: #6b7280;
-  --border-color: #e5e7eb;
+  --text-primary: #0B192C;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+  --border-color: #E2E8F0;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, .08);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, .1);
   --shadow-lg: 0 10px 40px rgba(0, 0, 0, .12);
-  --gradient-hero: linear-gradient(135deg, rgba(255, 77, 0, .05) 0%, rgba(99, 102, 241, .05) 100%);
+  --gradient-hero: transparent;
 }
 [data-theme=dark] .imar {
-  --bg-primary: #0a0a0a;
+  --bg-primary: #0F172A;
   --text-primary: #ffffff;
-  --bg-card: #141414;
+  --bg-card: #1E293B;
   --text-secondary: #c0c0c0;
-  --border-color: #2a2a2a;
+  --border-color: #1E293B;
 }
 .imar  {
   scroll-behavior: smooth;
@@ -1324,7 +1306,7 @@ body {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--primary-light);
+  color: var(--text-primary);
   margin-bottom: 16px;
 }
 .imar .section-title  {
@@ -1351,19 +1333,19 @@ body {
    NEW NEUROGYM PROGRAMMES GALLERY SECTION (.jbk8)
    ================================================= */
 .jbk8  {
-  --bg-primary: #ffffff;
-  --text-primary: #1a1a1a;
-  --gradient-primary: linear-gradient(135deg, #8446ad 0%, #a855f7 100%);
-  --text-secondary: #4a4a4a;
-  --border-color: #e5e7eb;
+  --bg-primary: #FAF9F6;
+  --text-primary: #0B192C;
+  --gradient-primary: #C5A059;
+  --text-secondary: #334155;
+  --border-color: #E2E8F0;
   --bg-card: #ffffff;
 }
 [data-theme=dark] .jbk8 {
-  --bg-primary: #0a0a0a;
+  --bg-primary: #0F172A;
   --text-primary: #ffffff;
-  --bg-card: #141414;
+  --bg-card: #1E293B;
   --text-secondary: #c0c0c0;
-  --border-color: #2a2a2a;
+  --border-color: #1E293B;
 }
 .jbk8 *  {
   margin: 0px;
@@ -1371,26 +1353,26 @@ body {
   box-sizing: border-box;
 }
 .jbk8  {
-  --primary: #8446ad;
-  --primary-dark: #6b3a8e;
-  --primary-light: #9b5bc4;
-  --secondary: #6366f1;
-  --gradient-primary: linear-gradient(135deg, #8446ad 0%, #a855f7 100%);
-  --gradient-section-soft: linear-gradient(135deg, rgba(132, 70, 173, .08) 0%, rgba(99, 102, 241, .08) 100%);
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --bg-tertiary: #f0f1f3;
+  --primary: #C5A059;
+  --primary-dark: #A18247;
+  --primary-light: #E5C494;
+  --secondary: #0B192C;
+  --gradient-primary: #C5A059;
+  --gradient-section-soft: rgba(100, 116, 139, 0.04);
+  --bg-primary: #FAF9F6;
+  --bg-secondary: #FAF9F6;
+  --bg-tertiary: #F1F0EA;
   --bg-card: #ffffff;
   --bg-nav: rgba(255, 255, 255, .95);
   --bg-nav-scrolled: rgba(255, 255, 255, .98);
-  --text-primary: #1a1a1a;
-  --text-secondary: #4a4a4a;
-  --text-muted: #6b7280;
-  --border-color: #e5e7eb;
+  --text-primary: #0B192C;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+  --border-color: #E2E8F0;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, .08);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, .1);
   --shadow-lg: 0 10px 40px rgba(0, 0, 0, .12);
-  --gradient-hero: linear-gradient(135deg, rgba(255, 77, 0, .05) 0%, rgba(99, 102, 241, .05) 100%);
+  --gradient-hero: transparent;
 }
 .jbk8  {
   scroll-behavior: smooth;
@@ -1421,10 +1403,8 @@ body {
   max-width: 100%;
   height: auto;
 }
-.jbk8 .hero-title-gradient  {
-  background: linear-gradient(90deg, rgb(168, 85, 247), rgb(192, 132, 252), rgb(168, 85, 247), rgb(139, 92, 246), rgb(192, 132, 252), rgb(168, 85, 247)) 0% 0% / 200% 100% text;
-  -webkit-text-fill-color: transparent;
-  animation: 3s ease-in-out 0s infinite normal none running fireGradient;
+.jbk8 .hero-title-gradient {
+  color: #C5A059;
 }
 .jbk8 .btn-primary  {
   display: inline-flex;
@@ -1437,7 +1417,7 @@ body {
   font-weight: 500;
   color: rgb(255, 255, 255);
   transition: 0.3s;
-  box-shadow: rgba(132, 70, 173, 0.3) 0px 4px 20px;
+  box-shadow: rgba(197, 160, 89, 0.3) 0px 4px 20px;
 }
 .jbk8 .section-cta  {
   display: flex;
@@ -1579,25 +1559,25 @@ body {
    NEW NEUROGYM MENTORS & COORDINATORS SECTION (.sjwv)
    ================================================= */
 .sjwv  {
-  --bg-primary: #ffffff;
-  --text-primary: #1a1a1a;
-  --gradient-primary: linear-gradient(135deg, #8446ad 0%, #a855f7 100%);
+  --bg-primary: #FAF9F6;
+  --text-primary: #0B192C;
+  --gradient-primary: #C5A059;
 }
 [data-theme=dark] .sjwv {
-  --bg-primary: #0a0a0a;
+  --bg-primary: #0F172A;
   --text-primary: #ffffff;
 }
 [data-theme=dark] .sjwv .ai-experts-section {
-  background: linear-gradient(135deg, #130a1c 0%, #070714 100%) !important;
+  background: #07101E !important;
   border-top: 1px solid #221236;
   border-bottom: 1px solid #221236;
 }
 [data-theme=dark] .sjwv .ai-coach-card {
-  background: rgba(132, 70, 173, 0.08) !important;
-  border-color: rgba(132, 70, 173, 0.25) !important;
+  background: rgba(197, 160, 89, 0.08) !important;
+  border-color: rgba(197, 160, 89, 0.25) !important;
 }
 [data-theme=dark] .sjwv .ai-experts-number {
-  color: #a855f7 !important;
+  color: #E5C494 !important;
 }
 .sjwv *  {
   margin: 0px;
@@ -1605,26 +1585,26 @@ body {
   box-sizing: border-box;
 }
 .sjwv  {
-  --primary: #8446ad;
-  --primary-dark: #6b3a8e;
-  --primary-light: #9b5bc4;
-  --secondary: #6366f1;
-  --gradient-primary: linear-gradient(135deg, #8446ad 0%, #a855f7 100%);
-  --gradient-section-soft: linear-gradient(135deg, rgba(132, 70, 173, .08) 0%, rgba(99, 102, 241, .08) 100%);
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --bg-tertiary: #f0f1f3;
+  --primary: #C5A059;
+  --primary-dark: #A18247;
+  --primary-light: #E5C494;
+  --secondary: #0B192C;
+  --gradient-primary: #C5A059;
+  --gradient-section-soft: rgba(100, 116, 139, 0.04);
+  --bg-primary: #FAF9F6;
+  --bg-secondary: #FAF9F6;
+  --bg-tertiary: #F1F0EA;
   --bg-card: #ffffff;
   --bg-nav: rgba(255, 255, 255, .95);
   --bg-nav-scrolled: rgba(255, 255, 255, .98);
-  --text-primary: #1a1a1a;
-  --text-secondary: #4a4a4a;
-  --text-muted: #6b7280;
-  --border-color: #e5e7eb;
+  --text-primary: #0B192C;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+  --border-color: #E2E8F0;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, .08);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, .1);
   --shadow-lg: 0 10px 40px rgba(0, 0, 0, .12);
-  --gradient-hero: linear-gradient(135deg, rgba(255, 77, 0, .05) 0%, rgba(99, 102, 241, .05) 100%);
+  --gradient-hero: transparent;
 }
 .sjwv  {
   scroll-behavior: smooth;
@@ -1657,11 +1637,11 @@ body {
   font-weight: 500;
   color: rgb(255, 255, 255);
   transition: 0.3s;
-  box-shadow: rgba(132, 70, 173, 0.3) 0px 4px 20px;
+  box-shadow: rgba(197, 160, 89, 0.3) 0px 4px 20px;
 }
 .sjwv .btn-primary-light  {
   background: rgb(255, 255, 255);
-  color: rgb(132, 70, 173);
+  color: rgb(197, 160, 89);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 20px;
 }
 .sjwv .section-cta  {
@@ -1671,7 +1651,7 @@ body {
 }
 .sjwv .ai-experts-section  {
   padding: 60px 0px;
-  background: linear-gradient(135deg, rgb(132, 70, 173), rgb(99, 102, 241));
+  background: #C5A059;
   position: relative;
   overflow: visible;
 }
@@ -1829,25 +1809,37 @@ body {
    NEW NEUROGYM AI COACHES SECTION (.kp49)
    ================================================= */
 .kp49  {
-  --bg-primary: #ffffff;
-  --text-primary: #1a1a1a;
-  --gradient-primary: linear-gradient(135deg, #8446ad 0%, #a855f7 100%);
+  --bg-primary: #FAF9F6;
+  --text-primary: #0B192C;
+  --gradient-primary: #C5A059;
 }
 [data-theme=dark] .kp49 {
-  --bg-primary: #0a0a0a;
+  --bg-primary: #0F172A;
   --text-primary: #ffffff;
 }
 [data-theme=dark] .kp49 .ai-experts-section {
-  background: linear-gradient(135deg, #130a1c 0%, #070714 100%) !important;
+  background: #07101E !important;
   border-top: 1px solid #221236;
   border-bottom: 1px solid #221236;
 }
 [data-theme=dark] .kp49 .ai-coach-card {
-  background: rgba(132, 70, 173, 0.08) !important;
-  border-color: rgba(132, 70, 173, 0.25) !important;
+  background: rgba(197, 160, 89, 0.08) !important;
+  border-color: rgba(197, 160, 89, 0.25) !important;
 }
 [data-theme=dark] .kp49 .ai-experts-number {
-  color: #a855f7 !important;
+  color: #E5C494 !important;
+}
+[data-theme=dark] .kp49 .ai-experts-label {
+  color: #FAF9F6 !important;
+}
+[data-theme=dark] .kp49 .ai-experts-description {
+  color: rgba(250, 249, 246, 0.9) !important;
+}
+[data-theme=dark] .kp49 .ai-feature-title {
+  color: #FAF9F6 !important;
+}
+[data-theme=dark] .kp49 .ai-feature-desc {
+  color: rgba(250, 249, 246, 0.6) !important;
 }
 .kp49 *  {
   margin: 0px;
@@ -1855,26 +1847,26 @@ body {
   box-sizing: border-box;
 }
 .kp49  {
-  --primary: #8446ad;
-  --primary-dark: #6b3a8e;
-  --primary-light: #9b5bc4;
-  --secondary: #6366f1;
-  --gradient-primary: linear-gradient(135deg, #8446ad 0%, #a855f7 100%);
-  --gradient-section-soft: linear-gradient(135deg, rgba(132, 70, 173, .08) 0%, rgba(99, 102, 241, .08) 100%);
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --bg-tertiary: #f0f1f3;
+  --primary: #C5A059;
+  --primary-dark: #A18247;
+  --primary-light: #E5C494;
+  --secondary: #0B192C;
+  --gradient-primary: #C5A059;
+  --gradient-section-soft: rgba(100, 116, 139, 0.04);
+  --bg-primary: #FAF9F6;
+  --bg-secondary: #FAF9F6;
+  --bg-tertiary: #F1F0EA;
   --bg-card: #ffffff;
   --bg-nav: rgba(255, 255, 255, .95);
   --bg-nav-scrolled: rgba(255, 255, 255, .98);
-  --text-primary: #1a1a1a;
-  --text-secondary: #4a4a4a;
-  --text-muted: #6b7280;
-  --border-color: #e5e7eb;
+  --text-primary: #0B192C;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+  --border-color: #E2E8F0;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, .08);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, .1);
   --shadow-lg: 0 10px 40px rgba(0, 0, 0, .12);
-  --gradient-hero: linear-gradient(135deg, rgba(255, 77, 0, .05) 0%, rgba(99, 102, 241, .05) 100%);
+  --gradient-hero: transparent;
 }
 .kp49  {
   scroll-behavior: smooth;
@@ -1907,11 +1899,11 @@ body {
   font-weight: 500;
   color: rgb(255, 255, 255);
   transition: 0.3s;
-  box-shadow: rgba(132, 70, 173, 0.3) 0px 4px 20px;
+  box-shadow: rgba(197, 160, 89, 0.3) 0px 4px 20px;
 }
 .kp49 .btn-primary-light  {
   background: rgb(255, 255, 255);
-  color: rgb(132, 70, 173);
+  color: rgb(197, 160, 89);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 20px;
 }
 .kp49 .section-cta  {
@@ -1921,7 +1913,7 @@ body {
 }
 .kp49 .ai-experts-section  {
   padding: 60px 0px;
-  background: linear-gradient(135deg, rgb(132, 70, 173), rgb(99, 102, 241));
+  background: #C5A059;
   position: relative;
   overflow: visible;
 }
@@ -1939,22 +1931,22 @@ body {
 .kp49 .ai-experts-number  {
   font-size: 140px;
   font-weight: 700;
-  color: rgb(255, 255, 255);
+  color: #0B192C;
   line-height: 1;
   margin-bottom: 8px;
-  text-shadow: rgba(0, 0, 0, 0.3) 0px 4px 30px;
+  text-shadow: rgba(0, 0, 0, 0.15) 0px 4px 30px;
 }
 .kp49 .ai-experts-label  {
   font-size: 48px;
   font-weight: 700;
-  color: rgb(255, 255, 255);
+  color: #0B192C;
   margin-bottom: 24px;
   text-transform: uppercase;
   letter-spacing: 4px;
 }
 .kp49 .ai-experts-description  {
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.9);
+  color: #0B192C;
   max-width: 600px;
   margin: 0px auto;
   line-height: 1.7;
@@ -1976,12 +1968,12 @@ body {
 .kp49 .ai-feature-title  {
   font-size: 16px;
   font-weight: 700;
-  color: rgb(255, 255, 255);
+  color: #0B192C;
 }
 .kp49 .ai-feature-desc  {
   font-size: 13px;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.6);
+  color: #1E293B;
 }
 .kp49 .ai-coaches-scroll  {
   width: 100%;
@@ -2096,20 +2088,20 @@ body {
    NEW NEUROGYM MENTAL FITNESS BENEFITS SECTION (.k2sc)
    ================================================= */
 .k2sc  {
-  --bg-primary: #ffffff;
-  --text-primary: #1a1a1a;
-  --gradient-primary: linear-gradient(135deg, #8446ad 0%, #a855f7 100%);
-  --primary-light: #9b5bc4;
-  --text-secondary: #4a4a4a;
-  --border-color: #e5e7eb;
+  --bg-primary: #FAF9F6;
+  --text-primary: #0B192C;
+  --gradient-primary: #C5A059;
+  --primary-light: #E5C494;
+  --text-secondary: #334155;
+  --border-color: #E2E8F0;
   --bg-card: #ffffff;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, .08);
 }
 [data-theme=dark] .k2sc {
-  --bg-primary: #0a0a0a;
+  --bg-primary: #0F172A;
   --text-primary: #ffffff;
-  --bg-card: #141414;
-  --border-color: #2a2a2a;
+  --bg-card: #1E293B;
+  --border-color: #1E293B;
   --text-secondary: #cccccc;
 }
 .k2sc *  {
@@ -2118,26 +2110,26 @@ body {
   box-sizing: border-box;
 }
 .k2sc  {
-  --primary: #8446ad;
-  --primary-dark: #6b3a8e;
-  --primary-light: #9b5bc4;
-  --secondary: #6366f1;
-  --gradient-primary: linear-gradient(135deg, #8446ad 0%, #a855f7 100%);
-  --gradient-section-soft: linear-gradient(135deg, rgba(132, 70, 173, .08) 0%, rgba(99, 102, 241, .08) 100%);
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --bg-tertiary: #f0f1f3;
+  --primary: #C5A059;
+  --primary-dark: #A18247;
+  --primary-light: #E5C494;
+  --secondary: #0B192C;
+  --gradient-primary: #C5A059;
+  --gradient-section-soft: rgba(100, 116, 139, 0.04);
+  --bg-primary: #FAF9F6;
+  --bg-secondary: #FAF9F6;
+  --bg-tertiary: #F1F0EA;
   --bg-card: #ffffff;
   --bg-nav: rgba(255, 255, 255, .95);
   --bg-nav-scrolled: rgba(255, 255, 255, .98);
-  --text-primary: #1a1a1a;
-  --text-secondary: #4a4a4a;
-  --text-muted: #6b7280;
-  --border-color: #e5e7eb;
+  --text-primary: #0B192C;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+  --border-color: #E2E8F0;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, .08);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, .1);
   --shadow-lg: 0 10px 40px rgba(0, 0, 0, .12);
-  --gradient-hero: linear-gradient(135deg, rgba(255, 77, 0, .05) 0%, rgba(99, 102, 241, .05) 100%);
+  --gradient-hero: transparent;
 }
 .k2sc  {
   scroll-behavior: smooth;
@@ -2168,7 +2160,7 @@ body {
   font-weight: 500;
   color: rgb(255, 255, 255);
   transition: 0.3s;
-  box-shadow: rgba(132, 70, 173, 0.3) 0px 4px 20px;
+  box-shadow: rgba(197, 160, 89, 0.3) 0px 4px 20px;
 }
 .k2sc .section-cta  {
   display: flex;
@@ -2183,7 +2175,7 @@ body {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--primary-light);
+  color: var(--text-primary);
   margin-bottom: 16px;
 }
 .k2sc .section-title  {
@@ -2274,7 +2266,7 @@ body {
   align-items: center;
   justify-content: center;
   color: rgb(255, 255, 255);
-  box-shadow: rgba(132, 70, 173, 0.4) 0px 8px 32px;
+  box-shadow: rgba(197, 160, 89, 0.4) 0px 8px 32px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 .k2sc .video-play-button svg  {
@@ -2303,7 +2295,7 @@ body {
 .k2sc .benefit-icon  {
   width: 56px;
   height: 56px;
-  background: linear-gradient(135deg, rgba(132, 70, 173, 0.15), rgba(132, 70, 173, 0.05));
+  background: rgba(197, 160, 89, 0.08);
   border-radius: 16px;
   display: flex;
   align-items: center;
@@ -2360,19 +2352,19 @@ body {
    NEW NEUROGYM HOW IT WORKS SECTION (.j9la)
    ================================================= */
 .j9la  {
-  --bg-primary: #ffffff;
-  --text-primary: #1a1a1a;
-  --gradient-primary: linear-gradient(135deg, #8446ad 0%, #a855f7 100%);
-  --primary-light: #9b5bc4;
-  --text-secondary: #4a4a4a;
-  --bg-tertiary: #f0f1f3;
-  --border-color: #e5e7eb;
+  --bg-primary: #FAF9F6;
+  --text-primary: #0B192C;
+  --gradient-primary: #C5A059;
+  --primary-light: #E5C494;
+  --text-secondary: #334155;
+  --bg-tertiary: #F1F0EA;
+  --border-color: #E2E8F0;
 }
 [data-theme=dark] .j9la {
-  --bg-primary: #0a0a0a;
+  --bg-primary: #0F172A;
   --text-primary: #ffffff;
-  --bg-tertiary: #141414;
-  --border-color: #2a2a2a;
+  --bg-tertiary: #1E293B;
+  --border-color: #1E293B;
   --text-secondary: #cccccc;
 }
 .j9la *  {
@@ -2381,26 +2373,26 @@ body {
   box-sizing: border-box;
 }
 .j9la  {
-  --primary: #8446ad;
-  --primary-dark: #6b3a8e;
-  --primary-light: #9b5bc4;
-  --secondary: #6366f1;
-  --gradient-primary: linear-gradient(135deg, #8446ad 0%, #a855f7 100%);
-  --gradient-section-soft: linear-gradient(135deg, rgba(132, 70, 173, .08) 0%, rgba(99, 102, 241, .08) 100%);
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --bg-tertiary: #f0f1f3;
+  --primary: #C5A059;
+  --primary-dark: #A18247;
+  --primary-light: #E5C494;
+  --secondary: #0B192C;
+  --gradient-primary: #C5A059;
+  --gradient-section-soft: rgba(100, 116, 139, 0.04);
+  --bg-primary: #FAF9F6;
+  --bg-secondary: #FAF9F6;
+  --bg-tertiary: #F1F0EA;
   --bg-card: #ffffff;
   --bg-nav: rgba(255, 255, 255, .95);
   --bg-nav-scrolled: rgba(255, 255, 255, .98);
-  --text-primary: #1a1a1a;
-  --text-secondary: #4a4a4a;
-  --text-muted: #6b7280;
-  --border-color: #e5e7eb;
+  --text-primary: #0B192C;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+  --border-color: #E2E8F0;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, .08);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, .1);
   --shadow-lg: 0 10px 40px rgba(0, 0, 0, .12);
-  --gradient-hero: linear-gradient(135deg, rgba(255, 77, 0, .05) 0%, rgba(99, 102, 241, .05) 100%);
+  --gradient-hero: transparent;
 }
 .j9la  {
   scroll-behavior: smooth;
@@ -2433,7 +2425,7 @@ body {
   font-weight: 500;
   color: rgb(255, 255, 255);
   transition: 0.3s;
-  box-shadow: rgba(132, 70, 173, 0.3) 0px 4px 20px;
+  box-shadow: rgba(197, 160, 89, 0.3) 0px 4px 20px;
 }
 .j9la .section-cta  {
   display: flex;
@@ -2448,7 +2440,7 @@ body {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--primary-light);
+  color: var(--text-primary);
   margin-bottom: 16px;
 }
 .j9la .section-title  {
@@ -2496,7 +2488,7 @@ body {
     left: calc(50% + 40px + 12px); /* Starts 12px past the right edge of step-number circle */
     width: calc(100% - 80px - 24px + 40px); /* Extends directly across the gap to the next step-number circle */
     height: 3px;
-    background: linear-gradient(90deg, #8446ad 0%, #6366f1 100%);
+    background: #0B192C;
     z-index: 0;
   }
 }
@@ -2509,7 +2501,7 @@ body {
     transform: translateX(-50%);
     width: 3px;
     height: calc(100% - 80px + 16px); /* Clean vertical line extending to next step card */
-    background: linear-gradient(180deg, #8446ad 0%, #6366f1 100%);
+    background: #0B192C;
     z-index: 0;
   }
 }
@@ -2583,20 +2575,20 @@ body {
    NEW PARAGON SUCCESS STORIES SECTION (.q3qi)
    ================================================= */
 .q3qi  {
-  --bg-primary: #ffffff;
-  --text-primary: #1a1a1a;
-  --gradient-primary: linear-gradient(135deg, #8446ad 0%, #a855f7 100%);
-  --primary-light: #9b5bc4;
-  --text-secondary: #4a4a4a;
-  --text-muted: #6b7280;
+  --bg-primary: #FAF9F6;
+  --text-primary: #0B192C;
+  --gradient-primary: #C5A059;
+  --primary-light: #E5C494;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
   --bg-card: #ffffff;
-  --border-color: #e5e7eb;
+  --border-color: #E2E8F0;
 }
 [data-theme=dark] .q3qi {
-  --bg-primary: #0a0a0a;
+  --bg-primary: #0F172A;
   --text-primary: #ffffff;
-  --bg-card: #141414;
-  --border-color: #2a2a2a;
+  --bg-card: #1E293B;
+  --border-color: #1E293B;
   --text-secondary: #cccccc;
 }
 .q3qi *  {
@@ -2605,26 +2597,26 @@ body {
   box-sizing: border-box;
 }
 .q3qi  {
-  --primary: #8446ad;
-  --primary-dark: #6b3a8e;
-  --primary-light: #9b5bc4;
-  --secondary: #6366f1;
-  --gradient-primary: linear-gradient(135deg, #8446ad 0%, #a855f7 100%);
-  --gradient-section-soft: linear-gradient(135deg, rgba(132, 70, 173, .08) 0%, rgba(99, 102, 241, .08) 100%);
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --bg-tertiary: #f0f1f3;
+  --primary: #C5A059;
+  --primary-dark: #A18247;
+  --primary-light: #E5C494;
+  --secondary: #0B192C;
+  --gradient-primary: #C5A059;
+  --gradient-section-soft: rgba(100, 116, 139, 0.04);
+  --bg-primary: #FAF9F6;
+  --bg-secondary: #FAF9F6;
+  --bg-tertiary: #F1F0EA;
   --bg-card: #ffffff;
   --bg-nav: rgba(255, 255, 255, .95);
   --bg-nav-scrolled: rgba(255, 255, 255, .98);
-  --text-primary: #1a1a1a;
-  --text-secondary: #4a4a4a;
-  --text-muted: #6b7280;
-  --border-color: #e5e7eb;
+  --text-primary: #0B192C;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+  --border-color: #E2E8F0;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, .08);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, .1);
   --shadow-lg: 0 10px 40px rgba(0, 0, 0, .12);
-  --gradient-hero: linear-gradient(135deg, rgba(255, 77, 0, .05) 0%, rgba(99, 102, 241, .05) 100%);
+  --gradient-hero: transparent;
 }
 .q3qi  {
   scroll-behavior: smooth;
@@ -2657,7 +2649,7 @@ body {
   font-weight: 500;
   color: rgb(255, 255, 255);
   transition: 0.3s;
-  box-shadow: rgba(132, 70, 173, 0.3) 0px 4px 20px;
+  box-shadow: rgba(197, 160, 89, 0.3) 0px 4px 20px;
 }
 .q3qi .section-cta  {
   display: flex;
@@ -2672,7 +2664,7 @@ body {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--primary-light);
+  color: var(--text-primary);
   margin-bottom: 16px;
 }
 .q3qi .section-title  {
@@ -2776,7 +2768,7 @@ body {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(132, 70, 173, 0.2), rgba(99, 102, 241, 0.2));
+  background: rgba(197, 160, 89, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2831,19 +2823,19 @@ body {
    NEW PARAGON TEAM SECTION (.s0vi)
    ================================================= */
 .s0vi  {
-  --bg-primary: #ffffff;
-  --text-primary: #1a1a1a;
-  --gradient-primary: linear-gradient(135deg, #8446ad 0%, #a855f7 100%);
-  --primary-light: #9b5bc4;
-  --text-secondary: #4a4a4a;
+  --bg-primary: #FAF9F6;
+  --text-primary: #0B192C;
+  --gradient-primary: #C5A059;
+  --primary-light: #E5C494;
+  --text-secondary: #334155;
   --bg-card: #ffffff;
-  --border-color: #e5e7eb;
+  --border-color: #E2E8F0;
 }
 [data-theme=dark] .s0vi {
-  --bg-primary: #0a0a0a;
+  --bg-primary: #0F172A;
   --text-primary: #ffffff;
-  --bg-card: #141414;
-  --border-color: #2a2a2a;
+  --bg-card: #1E293B;
+  --border-color: #1E293B;
   --text-secondary: #cccccc;
 }
 .s0vi *  {
@@ -2852,26 +2844,26 @@ body {
   box-sizing: border-box;
 }
 .s0vi  {
-  --primary: #8446ad;
-  --primary-dark: #6b3a8e;
-  --primary-light: #9b5bc4;
-  --secondary: #6366f1;
-  --gradient-primary: linear-gradient(135deg, #8446ad 0%, #a855f7 100%);
-  --gradient-section-soft: linear-gradient(135deg, rgba(132, 70, 173, .08) 0%, rgba(99, 102, 241, .08) 100%);
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --bg-tertiary: #f0f1f3;
+  --primary: #C5A059;
+  --primary-dark: #A18247;
+  --primary-light: #E5C494;
+  --secondary: #0B192C;
+  --gradient-primary: #C5A059;
+  --gradient-section-soft: rgba(100, 116, 139, 0.04);
+  --bg-primary: #FAF9F6;
+  --bg-secondary: #FAF9F6;
+  --bg-tertiary: #F1F0EA;
   --bg-card: #ffffff;
   --bg-nav: rgba(255, 255, 255, .95);
   --bg-nav-scrolled: rgba(255, 255, 255, .98);
-  --text-primary: #1a1a1a;
-  --text-secondary: #4a4a4a;
-  --text-muted: #6b7280;
-  --border-color: #e5e7eb;
+  --text-primary: #0B192C;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+  --border-color: #E2E8F0;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, .08);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, .1);
   --shadow-lg: 0 10px 40px rgba(0, 0, 0, .12);
-  --gradient-hero: linear-gradient(135deg, rgba(255, 77, 0, .05) 0%, rgba(99, 102, 241, .05) 100%);
+  --gradient-hero: transparent;
 }
 .s0vi  {
   scroll-behavior: smooth;
@@ -2904,7 +2896,7 @@ body {
   font-weight: 500;
   color: rgb(255, 255, 255);
   transition: 0.3s;
-  box-shadow: rgba(132, 70, 173, 0.3) 0px 4px 20px;
+  box-shadow: rgba(197, 160, 89, 0.3) 0px 4px 20px;
 }
 .s0vi .section-cta  {
   display: flex;
@@ -2919,7 +2911,7 @@ body {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--primary-light);
+  color: var(--text-primary);
   margin-bottom: 16px;
 }
 .s0vi .section-title  {
@@ -2996,7 +2988,7 @@ body {
   height: 300px;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(132, 70, 173, 0.1), rgba(99, 102, 241, 0.1));
+  background: rgba(100, 116, 139, 0.05);
 }
 .s0vi .team-image  {
   width: 100%;
